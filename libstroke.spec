@@ -21,7 +21,7 @@ Group: System/Libraries
 %if %{mdkversion} >= 200700
 BuildRequires:	libx11-devel
 %else
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 %endif
 BuildRequires:	gtk+1.2-devel
 BuildRequires:	libtool
