@@ -25,7 +25,6 @@ BuildRequires:	X11-devel
 %endif
 BuildRequires:	gtk+1.2-devel
 BuildRequires:	libtool
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 LibStroke is a stroke interface library.  Strokes are motions
