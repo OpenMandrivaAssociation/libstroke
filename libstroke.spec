@@ -9,7 +9,7 @@
 %define libnamedev %mklibname %{fakename} %major -d
 
 
-Summary:	LibStroke is a stroke interface library
+Summary:	Stroke interface library
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
@@ -33,7 +33,7 @@ of the mouse that can be interpreted by a program as a command.  Strokes
 are used extensively in CAD programs.
 
 %package -n	%{libname}
-Summary:	LibStroke is a stroke interface library
+Summary:	Stroke interface library
 Group:	System/Libraries
 
 %description -n	%{libname}
