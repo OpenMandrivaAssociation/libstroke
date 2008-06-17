@@ -1,6 +1,6 @@
 %define name libstroke
 %define version 0.5.1
-%define release %mkrel 11
+%define release %mkrel 12
 
 %define fakename stroke
 
