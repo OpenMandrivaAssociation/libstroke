@@ -1,6 +1,6 @@
 %define name libstroke
 %define version 0.5.1
-%define release %mkrel 12
+%define release %mkrel 13
 
 %define fakename stroke
 
@@ -16,6 +16,7 @@ Release:	%{release}
 URL:		http://www.etla.net/libstroke/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		libstroke-0.5.1-fix-underquoted-calls.patch
+Patch1:		libstroke-linkage_fix.diff
 License:	GPL
 Group: System/Libraries
 %if %{mdkversion} >= 200700
@@ -55,6 +56,7 @@ are used extensively in CAD programs.
 %prep
 %setup -q
 %patch0 -p1 -b .underquoted
+%patch1 -p1
 
 %build
 %configure
