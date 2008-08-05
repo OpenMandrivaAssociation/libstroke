@@ -1,55 +1,47 @@
-%define name libstroke
-%define version 0.5.1
-%define release %mkrel 13
+%define oname	stroke
 
-%define fakename stroke
-
-%define major 0
-%define libname %mklibname %{fakename} %major
-%define libnamedev %mklibname %{fakename} %major -d
+%define major		0
+%define libname		%mklibname %{oname} %major
+%define develname	%mklibname %{oname} -d
 
 
 Summary:	Stroke interface library
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		libstroke
+Version:	0.5.1
+Release:	%{mkrel 14}
 URL:		http://www.etla.net/libstroke/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		libstroke-0.5.1-fix-underquoted-calls.patch
 Patch1:		libstroke-linkage_fix.diff
-License:	GPL
-Group: System/Libraries
-%if %{mdkversion} >= 200700
+License:	GPLv2
+Group:		System/Libraries
 BuildRequires:	libx11-devel
-%else
-BuildRequires:	X11-devel
-%endif
-BuildRequires:	gtk+1.2-devel
 BuildRequires:	libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
-LibStroke is a stroke interface library.  Strokes are motions
+LibStroke is a stroke interface library. Strokes are motions
 of the mouse that can be interpreted by a program as a command.  Strokes
 are used extensively in CAD programs.
 
 %package -n	%{libname}
 Summary:	Stroke interface library
-Group:	System/Libraries
+Group:		System/Libraries
 
 %description -n	%{libname}
-LibStroke is a stroke interface library.  Strokes are motions
+LibStroke is a stroke interface library. Strokes are motions
 of the mouse that can be interpreted by a program as a command.  Strokes
 are used extensively in CAD programs.
 
-%package -n	%{libnamedev}
+%package -n	%{develname}
 Summary:	Development libraries for libStroke
 Group:		Development/C
-Provides:	%{name}-devel
-Requires:	%{libname} = %{version}
+Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{version}-%{release}
+Obsoletes:	%{mklibname stroke 0 -d}
 
-%description -n %{libnamedev}
-LibStroke is a stroke interface library.  Strokes are motions
+%description -n %{develname}
+LibStroke is a stroke interface library. Strokes are motions
 of the mouse that can be interpreted by a program as a command.  Strokes
 are used extensively in CAD programs.
 
@@ -83,22 +75,14 @@ rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
-%doc README AUTHORS COPYING NEWS
-%{_libdir}/libgstroke.so.0.0.5
-%{_libdir}/libgstroke.so.0
-%{_libdir}/libstroke.so.0.0.5
-%{_libdir}/libstroke.so.0
+%doc README AUTHORS COPYRIGHT NEWS
+%{_libdir}/libstroke.so.%{major}*
 
-%files -n %{libnamedev}
+%files -n %{develname}
 %defattr(-,root,root)
 %doc INSTALL TODO
 %{_datadir}/aclocal/*
-%{_libdir}/libgstroke.a
-%{_libdir}/libgstroke.la
-%{_libdir}/libgstroke.so
-%{_libdir}/libstroke.a
-%{_libdir}/libstroke.la
+%{_libdir}/libstroke.*a
 %{_libdir}/libstroke.so
 %{_includedir}/*
-
 
