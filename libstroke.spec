@@ -8,15 +8,17 @@
 Summary:	Stroke interface library
 Name:		libstroke
 Version:	0.5.1
-Release:	%{mkrel 14}
+Release:	%{mkrel 15}
 URL:		http://www.etla.net/libstroke/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		libstroke-0.5.1-fix-underquoted-calls.patch
 Patch1:		libstroke-linkage_fix.diff
+Patch2:		libstroke-0.5.1-no_gtk1.patch
+Patch3:		libstroke-0.5.1-dup-defination.patch
+Patch4:		libstroke-0.5.1-drop-unused-comments.patch
 License:	GPLv2
 Group:		System/Libraries
 BuildRequires:	libx11-devel
-BuildRequires:	libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -49,12 +51,13 @@ are used extensively in CAD programs.
 %setup -q
 %patch0 -p1 -b .underquoted
 %patch1 -p1
+%patch2 -p1
+%patch3 -p0
+%patch4 -p0
 
 %build
-%configure
-# use system libtool (cheap fix, too ancient autotools in this package)
-rm -f libtool
-ln -s %{_bindir}/libtool .
+autoreconf -fi
+%configure2_5x
 %make
 
 %install
