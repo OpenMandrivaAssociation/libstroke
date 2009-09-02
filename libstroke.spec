@@ -8,7 +8,7 @@
 Summary:	Stroke interface library
 Name:		libstroke
 Version:	0.5.1
-Release:	%{mkrel 15}
+Release:	%{mkrel 16}
 URL:		http://www.etla.net/libstroke/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		libstroke-0.5.1-fix-underquoted-calls.patch
