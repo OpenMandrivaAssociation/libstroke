@@ -1,0 +1,11 @@
+--- libstroke/Makefile.am~	2009-04-10 16:03:11.000000000 +0200
++++ libstroke/Makefile.am	2009-04-10 16:04:54.000000000 +0200
+@@ -5,8 +5,6 @@
+ # level Makefile.
+ AUTOMAKE_OPTIONS = foreign
+ 
+-#tclpath::
+-	#echo ${ENABLE_TCL}
+ 
+ #if ENABLE_TCL
+ #SEL_BIB = libstroke.la libstroke_tcl.la
