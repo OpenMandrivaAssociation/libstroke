@@ -16,10 +16,10 @@ Patch1:		libstroke-linkage_fix.diff
 Patch2:		libstroke-0.5.1-no_gtk1.patch
 Patch3:		libstroke-0.5.1-dup-defination.patch
 Patch4:		libstroke-0.5.1-drop-unused-comments.patch
+Patch5:		libstroke-automake-1.13.patch
 License:	GPLv2
 Group:		System/Libraries
 BuildRequires:	libx11-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 LibStroke is a stroke interface library. Strokes are motions
@@ -54,6 +54,7 @@ are used extensively in CAD programs.
 %patch2 -p1
 %patch3 -p0
 %patch4 -p0
+%patch5 -p1 -b .am113~
 
 %build
 autoreconf -fi
