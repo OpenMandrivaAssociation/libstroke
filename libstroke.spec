@@ -19,7 +19,7 @@ Patch4:		libstroke-0.5.1-drop-unused-comments.patch
 Patch5:		libstroke-automake-1.13.patch
 License:	GPLv2
 Group:		System/Libraries
-BuildRequires:	libx11-devel
+BuildRequires:	pkgconfig(x11)
 
 %description
 LibStroke is a stroke interface library. Strokes are motions
