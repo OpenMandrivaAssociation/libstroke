@@ -6,7 +6,7 @@
 Summary:	Stroke interface library
 Name:		libstroke
 Version:	0.5.1
-Release:	23
+Release:	24
 License:	GPLv2
 Group:		System/Libraries
 Url:		http://www.etla.net/libstroke/
