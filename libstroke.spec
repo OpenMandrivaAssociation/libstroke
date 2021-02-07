@@ -51,11 +51,11 @@ This package includes the development files for %{name}.
 autoreconf -fi
 
 %build
-%configure2_5x --disable-static
-%make
+%configure --disable-static
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libstroke.so.%{major}*
@@ -65,4 +65,3 @@ autoreconf -fi
 %{_datadir}/aclocal/*
 %{_libdir}/libstroke.so
 %{_includedir}/*
-
