@@ -9,7 +9,7 @@ Version:	0.5.1
 Release:	30
 License:	GPLv2
 Group:		System/Libraries
-Url:		http://www.etla.net/libstroke/
+Url:		https://www.etla.net/libstroke/
 # Old original source is no longer available, so let's use Arch mirror:
 Source0:  https://sources.archlinux.org/other/packages/libstroke/%{name}-%{version}.tar.gz
 #Source0:	http://etla.net/libstroke/%{name}-%{version}.tar.gz
