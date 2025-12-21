@@ -20,6 +20,11 @@ Patch2:		libstroke-0.5.1-no_gtk1.patch
 Patch3:		libstroke-0.5.1-dup-defination.patch
 Patch4:		libstroke-0.5.1-drop-unused-comments.patch
 Patch5:		libstroke-automake-1.13.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(x11)
 
 %description
